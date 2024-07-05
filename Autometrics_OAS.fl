@@ -1,0 +1,14 @@
+// Batch code for EQ( 3)
+module("PcGive");
+package("PcGive", "Single-equation");
+usedata("ex3_regress_oas.csv");
+system
+{
+    Y = OAS;
+    Z = Constant, VIX 1, SENT 1, PMI 1, SI#7, SI#19, SI#26, SI#33, 
+        SI#36, SI#44, SI#45, SI#53, SI#59, SI#63, SI#81, SI#98, SI#107, 
+        SI#114, SI#118, SI#120, SI#123, SI#125, SI#128, SI#129, SI#131, 
+        SI#135, SI#138, SI#143, SI#155, SI#160, SI#165, SI#166, SI#178, 
+        SI#193, SI#200, SI#214;
+}
+estimate("OLS", 2, 1, 216, 1);
