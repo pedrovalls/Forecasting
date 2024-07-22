@@ -1,0 +1,14 @@
+// Batch code for UC( 1)
+module("STAMP");
+package("UCstamp");
+usedata("mewdata_RCPI.xlsx");
+system
+{
+    Y = rcpi;
+}
+setcmp("level", 1, 0.0985235, 0, 0);
+setcmp("slope", 1, 0, 0, 0);
+setcmp("seasonal", 4, 0, 0, 0);
+setcmp("irregular", 0, 0.0192456, 0, 0);
+setmodel();
+estimate("MAXSTAMP", 1985, 1, 2012, 4);
